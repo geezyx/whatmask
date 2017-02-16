@@ -1,5 +1,8 @@
 ### Whatmask - Port to Ruby
-https://travis-ci.org/geezyx/whatmask.svg?branch=master
+![travis-ci](https://travis-ci.org/geezyx/whatmask.svg?branch=master)
+[![Test Coverage](https://codeclimate.com/github/geezyx/whatmask/badges/coverage.svg)](https://codeclimate.com/github/geezyx/whatmask/coverage)
+[![Code Climate](https://codeclimate.com/github/geezyx/whatmask/badges/gpa.svg)](https://codeclimate.com/github/geezyx/whatmask)
+[![Issue Count](https://codeclimate.com/github/geezyx/whatmask/badges/issue_count.svg)](https://codeclimate.com/github/geezyx/whatmask)
 
 Whatmask is a command-line tool originally written by Jim Laffey (http://www.laffeycomputer.com/whatmask.html) and released with a GPL license.  This is a ruby rewrite of whatmask, providing the same functionality of the original utility (will maybe add more).
 
