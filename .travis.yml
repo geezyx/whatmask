@@ -5,9 +5,8 @@ rvm:
   - 2.0
   - 2.1
   - 2.2
-  - head
+  - 2.3
   - jruby
-  - rbx-2
 deploy:
   provider: rubygems
   api_key:
