@@ -12,6 +12,7 @@ install:
 script: rspec
 deploy:
   provider: script
+  skip_cleanup: true
   script: ".travis/deploy.sh"
   on:
     tags: true
