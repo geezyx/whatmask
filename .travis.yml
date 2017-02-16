@@ -6,6 +6,7 @@ language: ruby
 rvm:
 - 2.4.0
 install:
+- chmod +x $TRAVIS_BUILD_DIR/.travis/is_valid_tag.rb
 - gem install bundler
 - bundle install
 script: rspec
