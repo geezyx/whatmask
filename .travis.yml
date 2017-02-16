@@ -15,8 +15,7 @@ deploy:
   script: ".travis/deploy.sh"
   on:
     tags: true
-    condition: '"$($TRAVIS_BUILD_DIR/.travis/is_valid_tag.rb $TRAVIS_TAG)" == "" &&
-      $? == 0'
+    condition: '"$($TRAVIS_BUILD_DIR/.travis/is_valid_tag.rb $TRAVIS_TAG)" == "" && $? == 0'
 env:
   global:
     secure: q5lG56J3jD7YYcLRXWsMZavMpXEe8TwiHPJ5Udq1dfHS1PayUoSLGjReIUEo8K0foxzbs550yASUgPjgK1ik6GePRQR5HX/TwUd6ctwavQ/tPsXOVhLtscuAlfbCH7smwHe3Brh9ruYfbExIEV3riPHrXG2dIF6saQpsCq7UEHjB/nQxN89SRC+jq/IqNladljKVl9etIlyO6AG6Pnk0pwMJt+SDaemUiqaLEGWAvPKZubupQZlOMxZ+CadYTlc2MUkf/lVlEtaRYDMqXfAwObCfSFBzwkvMI7rRJUsGIOXgf99mddaHjivxTYw0LEte1YLvbXfrJZoNXFVo8bDVZ2IyUpIib/10auaeEYgLLfQc5XBzTv6zVVEaOgHlF6B6ZtZKN4EFPaAyOitrAIndZtJoY5RRViNdJvzUBovNsEPbtD+Ke4k7mJ2+Hylm3mUnV9mF6qjaXn2ikJUFAlrSsmnWCFqzDFyGStc5VMvvEAuv0dEhq/S8r9wey7gjb+tPyalTzeimIyuyqOOmRPZuXoVwJYn+1jCyRM5OfcHo2S96oPbUgUcKW5TSy7QWVwa2yKMHJSdeqmLD2wc6oRdIMLG+ogd/4ZvZCiReiAZ489O8k4dfWnsJ0sZ+jsCVFMZVislQqTF5bzJAppa6/f7Q4GO7L0msgxXlhy/LT1POmTE=
