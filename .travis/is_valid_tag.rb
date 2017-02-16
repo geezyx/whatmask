@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/whatmask.rb"
+require_relative '../lib/whatmask/version.rb'
 
 travis_tag = ARGV[0]
 
