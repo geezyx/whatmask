@@ -1,4 +1,5 @@
 ### Whatmask - Port to Ruby
+https://travis-ci.org/geezyx/whatmask.svg?branch=master
 
 Whatmask is a command-line tool originally written by Jim Laffey (http://www.laffeycomputer.com/whatmask.html) and released with a GPL license.  This is a ruby rewrite of whatmask, providing the same functionality of the original utility (will maybe add more).
 
