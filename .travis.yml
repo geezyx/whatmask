@@ -1,6 +1,8 @@
----
-language: ruby
-rvm:
-  - 2.0
-  - 2.1
-  - 2.2
+deploy:
+  provider: rubygems
+  api_key:
+    secure: VBQZmCqqNbWfZgzIeRlaN3AW/a59KwbwU4COlveX80OuYrJQ2gyhlmp9tCtHMa1nz0e1IA2CCCGSb4dNmWd5YmI/WhuC0GXaBBrvQUbId4XkXzdxDyBjcc/VrOnsD+VVIhvj3/Lpg0TS0wSTUWui43vbPMokMxl0IkI+jZvaKhQXOesNI5DAIYxX1O2KzWiCi0YxYk4A94/Ly5MNJKBBePwUbysXZHrr9GnEL1bRHu2LlEMNTmuLxICw7ZJl5HJOOAaG2O8oktw1p6Ks/HxNi6E7HUjJxlEPIoaq8/o2bXTbj9OYXCLllYdM+kWXxoBzP6DPFSyVqnyr5wuLJJ1aV16Q5OUkleVAt57w4Agp1JK6KBIzcqjkIy3Tx0x8nzRiMx+nLQDNbBsq+K5cAmgrq5sfDxRpba0k5W0NwD4UkE6u0rZen1eh1Zh77hkAXmt/+xDb3fHq10Bv58o4Vs4WBMzmwytYFViXCCktYXZ8hD4K2745xBcucZdhRYhWvV5Uthlwf51aLjbzZouhUTEeOj/RVL2GUj+Ie4SZJU9YKKFwZUuf/2GqNpiLoVdFax5Xez8Ngux1Wn5GBXlhCorrFvDRe34UKoQr6naZPyIxRSizQztZSLmtKkZWUjDBNpO7WmfjbeiIOfEa+bYvVXcsiQZ4snrquRoXdGx6Mw3XVAo=
+  gem: whatmask
+  on:
+    tags: true
+    repo: geezyx/whatmask
