@@ -1,0 +1,109 @@
+#!/usr/bin/env ruby
+
+root = File.expand_path(File.join(File.dirname(__FILE__),'..'))
+if File.directory?(File.join(root,'.git'))
+  Dir.chdir(root) do
+    begin
+      require 'bundler/setup'
+    rescue LoadError => e
+      warn e.message
+      warn "Run `gem install bundler` to install Bundler"
+      exit -1
+    end
+  end
+end
+
+require 'whatmask'
+
+if ARGV.empty?
+  puts('')
+  puts('whatmask comes with ABSOLUTELY NO WARRANTY; for details see the COPYING file')
+  puts('that accompained this distribution. This is free software, and you are welcome')
+  puts('to redistribute it under the terms of GNU PUBLIC LICENSE.')
+  puts('')
+  puts('whatmask may be used two ways:')
+  puts('')
+  puts('Given a mask:          whatmask <CIDR bits>')
+  puts('               - or -  whatmask <subnet mask>')
+  puts('               - or -  whatmask <hex subnet mask>')
+  puts('               - or -  whatmask <wildcard bit mask>')
+  puts(' NOTE: whatmask will autodetect the input and show you all four.')
+  puts('')
+  puts('Given an ip/mask:      whatmask <IP address>/<netmask>')
+  puts('       <netmask> may be one of the following:')
+  puts('                       CIDR notation (e.g. "24")')
+  puts('                       Netmask notation (e.g. "255.255.255.0")')
+  puts('                       Hex Netmask notation (e.g. "0xffffff00")')
+  puts('                       Wildcard bits notation (e.g. "0.0.0.255")')
+  puts(' NOTE: whatmask will autodetect the netmask format.')
+  puts('')
+  exit
+end
+
+if ARGV[0][0] == "/"
+  wm = Whatmask.new(ARGV[0][1..-1])
+  puts ''
+  puts '---------------------------------------------'
+  puts '       TCP/IP SUBNET MASK EQUIVALENTS'
+  puts '---------------------------------------------'
+  puts 'CIDR = .....................: /'+wm.cidr.to_s
+  puts 'Netmask = ..................: '+wm.mask
+  puts 'Netmask (hex) = ............: '+wm.hex
+  puts 'Wildcard Bits = ............: '+wm.inverse
+  puts 'Usable IP Addresses = ......: '+wm.avail.to_s
+  puts ''
+
+elsif ARGV[0] == "-v"
+  puts Whatmask::VERSION
+
+elsif ARGV[0].include? "/"
+  wm = Whatmask.new(ARGV[0].split('/')[1], ARGV[0].split('/')[0])
+  puts ''
+  puts '------------------------------------------------'
+  puts '           TCP/IP NETWORK INFORMATION'
+  puts '------------------------------------------------'
+  puts 'IP Entered = ..................: '+wm.address
+  puts 'CIDR = ........................: /'+wm.cidr.to_s
+  puts 'Netmask = .....................: '+wm.mask
+  puts 'Netmask (hex) = ...............: '+wm.hex
+  puts 'Wildcard Bits = ...............: '+wm.inverse
+  puts '------------------------------------------------'
+  puts 'Network Address = .............: '+wm.network
+  puts 'Broadcast Address = ...........: '+wm.broadcast
+  puts 'Usable IP Addresses = .........: '+wm.avail.to_s
+  puts 'First Usable IP Address = .....: '+wm.first
+  puts 'Last Usable IP Address = ......: '+wm.last
+  puts ''
+
+elsif ARGV.length < 2
+  wm = Whatmask.new(ARGV[0])
+  puts ''
+  puts '---------------------------------------------'
+  puts '       TCP/IP SUBNET MASK EQUIVALENTS'
+  puts '---------------------------------------------'
+  puts 'CIDR = .....................: /'+wm.cidr.to_s
+  puts 'Netmask = ..................: '+wm.mask
+  puts 'Netmask (hex) = ............: '+wm.hex
+  puts 'Wildcard Bits = ............: '+wm.inverse
+  puts 'Usable IP Addresses = ......: '+wm.avail.to_s
+  puts ''
+
+else
+  wm = Whatmask.new(ARGV[1], ARGV[0])
+  puts ''
+  puts '------------------------------------------------'
+  puts '           TCP/IP NETWORK INFORMATION'
+  puts '------------------------------------------------'
+  puts 'IP Entered = ..................: '+wm.address
+  puts 'CIDR = ........................: /'+wm.cidr.to_s
+  puts 'Netmask = .....................: '+wm.mask
+  puts 'Netmask (hex) = ...............: '+wm.hex
+  puts 'Wildcard Bits = ...............: '+wm.inverse
+  puts '------------------------------------------------'
+  puts 'Network Address = .............: '+wm.network
+  puts 'Broadcast Address = ...........: '+wm.broadcast
+  puts 'Usable IP Addresses = .........: '+wm.avail.to_s
+  puts 'First Usable IP Address = .....: '+wm.first
+  puts 'Last Usable IP Address = ......: '+wm.last
+  puts ''
+end
