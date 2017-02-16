@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'coveralls', require: false
+group :test do
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
+end
 
 group :development do
   gem 'kramdown'

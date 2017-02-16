@@ -14,3 +14,7 @@ deploy:
   on:
     tags: true
     repo: geezyx/whatmask
+addons:
+  code_climate:
+    repo_token:
+      secure: "fQqzL1HwQ2esEE6sTqoC6JmtXMlazD+yDck3K4DreyJ8C35VFzGQTQeiMDiI8LBIQEKgQ8hVejI+ujIBAjlie+37h41zNm4TuOsEn2UIBtPFn7svMPf+8dah/tcGPaTUGD14CBiWW3QwN+r0Pnqk/N5oHpy/QoUUzKs/MIcPeehngBmSMq23YEab7Y9hh9oBgEsK2WYh3Noba564ozFyspP940qH2kRqaafaU94AmlWbdNQRhoXnBK8t1EtYSmX8QwknwYVoomOdblgTEq3EkrrvoJL5lZSbgJ1mpEZtoBl+AvzScw/6Ui0LTVGG0PIrhImEcIALnI3byCjzB0MLaChUuf0mXydYH1SLNrV7xlGaiC6yLQEJzLJ7qdRIJpUvKgT5761if9/C458TPdgn8b9aZhx8LKN3xfpR1JkQlNP3xDoHdxkd2QN5453jP5k+tn/2ZXTQmXKwypz5qSm+5DxASlw1xgRbS3AJeSjgSjSfKBqs0I3x1nJ0H8RS022hcwsXAmsHUBpK79QyJV/5Xe/TQkjyw79on7IZ3L+tR6xl0YqmJiU8ZoD9LiqqDkBFYoGikUHjcqLSFTNJaTV0sPxCh+CmKONNCbAqpN7xLnJFyBs6o/AsXYy0+D1KcGok14X6q7oi1+ZqPz/a7zVatcAqx+gVOdydEWnH8fJNi0w="
