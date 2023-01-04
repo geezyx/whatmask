@@ -5,6 +5,8 @@ jobs:
   test:
     docker:
       - image: cimg/ruby:3.1
+    environment:
+      - CC_TEST_REPORTER_ID: d9bc19fd427d76faff759dbca174cce53e5194c40dfd0b6f4d7cbccc1da601ff
     steps:
       - checkout
       - ruby/install-deps
