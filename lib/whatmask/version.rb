@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 Mike Gee (geezyx at gmail.com)
+# Copyright (c) 2023 Mike Gee (geezyx at gmail.com)
 #
 # whatmask is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
