@@ -21,7 +21,8 @@ jobs:
             chmod +x ./cc-test-reporter
       - run:
           command: |
-            ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.json coverage/.resultset.json 
+            jq 'walk(try .lines // .)' coverage/.resultset.json > coverage/.resultset_fixed.json
+            ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.json coverage/.resultset_fixed.json 
             ./cc-test-reporter upload-coverage
   deploy:
     docker:
