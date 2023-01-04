@@ -9,7 +9,7 @@ rescue LoadError => e
 end
 
 require 'rake'
-
+require 'rake/release'
 
 require 'rubygems/tasks'
 Gem::Tasks.new

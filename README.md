@@ -1,7 +1,7 @@
-![travis-ci](https://travis-ci.org/geezyx/whatmask.svg?branch=master)
-[![Test Coverage](https://codeclimate.com/github/geezyx/whatmask/badges/coverage.svg)](https://codeclimate.com/github/geezyx/whatmask/coverage)
-[![Code Climate](https://codeclimate.com/github/geezyx/whatmask/badges/gpa.svg)](https://codeclimate.com/github/geezyx/whatmask)
-[![Issue Count](https://codeclimate.com/github/geezyx/whatmask/badges/issue_count.svg)](https://codeclimate.com/github/geezyx/whatmask)
+[![Gem Version](https://badge.fury.io/rb/whatmask.svg)](https://badge.fury.io/rb/whatmask)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/geezyx/whatmask/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/geezyx/whatmask/tree/main)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/113c95a91a5053c78b7d/test_coverage)](https://codeclimate.com/github/geezyx/whatmask/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/113c95a91a5053c78b7d/maintainability)](https://codeclimate.com/github/geezyx/whatmask/maintainability)
 # Whatmask
 
 Whatmask is a command-line tool originally written by Jim Laffey (http://www.laffeycomputer.com/whatmask.html) and released with a GPL license.  This is a ruby rewrite of whatmask, providing the same functionality of the original utility (will maybe add more).

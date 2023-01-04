@@ -1,0 +1,51 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.0.4
+jobs:
+  test:
+    docker:
+      - image: cimg/ruby:3.1
+    environment:
+      - CC_TEST_REPORTER_ID: d9bc19fd427d76faff759dbca174cce53e5194c40dfd0b6f4d7cbccc1da601ff
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: Run tests
+          command: bundle exec rake
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          command: |
+            jq 'walk(try .lines // .)' coverage/.resultset.json > coverage/.resultset_fixed.json
+            ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.json coverage/.resultset_fixed.json 
+            ./cc-test-reporter upload-coverage
+  deploy:
+    docker:
+      - image: cimg/ruby:3.1
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: Publish gem to Rubygems
+          command: bundle exec rake release
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/

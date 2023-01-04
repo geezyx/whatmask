@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.version       = Whatmask::VERSION
   gem.summary       = %q{netmask calculator}
   gem.description   = %q{A ruby adaptation of whatmask http://www.laffeycomputer.com/whatmask.html}
-  gem.license       = "GPL"
+  gem.license       = "LGPL-3.0-or-later"
   gem.authors       = ["Mike Gee"]
   gem.email         = "geezyx@gmail.com"
   gem.homepage      = "https://github.com/geezyx/whatmask"
@@ -29,9 +29,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
-  gem.add_development_dependency 'bundler'
-  gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'rubygems-tasks'
-  gem.add_development_dependency 'yard'
+  gem.add_development_dependency 'bundler', '~> 2.3'
+  gem.add_development_dependency 'rake', '~> 13.0.6'
+  gem.add_development_dependency 'rspec', '~> 3.12'
+  gem.add_development_dependency 'rubygems-tasks', '~> 0.2'
+  gem.add_development_dependency 'yard', '~> 0.9'
 end
